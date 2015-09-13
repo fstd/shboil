@@ -28,10 +28,26 @@ prgauthor="${prgauthor:-Nobody}"
 prgyear="${prgyear:-Never}"
 prgcontact="${prgcontact:-'Do not call us, we call you'}"
 
+if [ -t 2 ]; then
+	_boil_idecor="$(printf '\033[1;32m')"
+	_boil_wdecor="$(printf '\033[1;33m')"
+	_boil_edecor="$(printf '\033[1;31m')"
+	_boil_rdecor="$(printf '\033[0m')"
+	_boil_stderr_tty=true
+else
+	_boil_idecor=''
+	_boil_wdecor=''
+	_boil_edecor=''
+	_boil_rdecor=''
+	_boil_stderr_tty=false
+fi
+
+
 V() { if [ $_boil_verb -gt 1 ]; then printf '%s: %s: %s\n' "$_boil_prgnam" "$(date)" "$*" >&2; fi; }
 D() { if [ $_boil_verb -gt 0 ]; then printf '%s: %s: %s\n' "$_boil_prgnam" "$(date)" "$*" >&2; fi; }
-W() { printf '%s: %s: %s\n' "$_boil_prgnam" "$(date)" "$*" >&2; } 
-E() { printf '%s: %s: %s\n' "$_boil_prgnam" "$(date)" "$*" >&2 ; exit 1; }
+A() { printf '%s: %s %sINFO:%s %s\n' "$_boil_prgnam" "$(date)" "$_boil_idecor" "$_boil_rdecor" "$*" >&2; } 
+W() { printf '%s: %s %sWARNING:%s %s\n' "$_boil_prgnam" "$(date)" "$_boil_wdecor" "$_boil_rdecor" "$*" >&2; } 
+E() { printf '%s: %s %sERROR:%s %s\n' "$_boil_prgnam" "$(date)" "$_boil_edecor" "$_boil_rdecor" "$*" >&2 ; exit 1; }
 
 Verbosity()
 {
