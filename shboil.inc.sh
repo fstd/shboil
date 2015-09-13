@@ -208,14 +208,14 @@ _boil_Init_Argvars_Core()
 
 _boil_Usage()
 {
-	printf "Usage: %s [ -%svh ] %s %s\n" "$_boil_prgnam" "$_boil_getopt_optstr" "$_boil_uah_mand" "$_boil_uah_opt" >&2
-	printf "  Options:\n" >&2
-	printf "%s" "$_boil_usage" >&2
-	printf "    -v: Be more verbose\n" >&2
-	printf "    -h: Display this usage statement\n" >&2
-	printf "  Arguments:\n" >&2
-	printf "%s" "$_boil_argusage" >&2
-	printf "(C) %s, %s (contact: %s)\n" "$prgyear" "$prgauthor" "$prgcontact" >&2
+	printf 'Usage: %s [ -%svh ] %s %s\n' "$_boil_prgnam" "$_boil_getopt_optstr" "$_boil_uah_mand" "$_boil_uah_opt" >&2
+	printf '  Options:\n' >&2
+	printf '%s' "$_boil_usage" >&2
+	printf '    -v: Be more verbose\n' >&2
+	printf '    -h: Display this usage statement\n' >&2
+	printf '  Arguments:\n' >&2
+	printf '%s' "$_boil_argusage" >&2
+	printf '(C) %s, %s (contact: %s)\n' "$prgyear" "$prgauthor" "$prgcontact" >&2
 	exit 1
 }
 
