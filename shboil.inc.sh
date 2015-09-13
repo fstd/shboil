@@ -12,6 +12,7 @@ fi
 _boil_argv=; while [ $# -gt 0 ]; do _boil_argv="${_boil_argv}'$1' "; shift; done
 eval "set -- $_boil_argv"
 
+_boil_version='0.0.1'
 _boil_verb=0
 _boil_prgnam=$(basename "$0")
 _boil_traplist="$(mktemp /tmp/${_boil_prgnam}.XXXXXXXXX)"
@@ -229,6 +230,11 @@ TF()
 	else
 		printf '%s\n' "$_boil_tmp"
 	fi
+}
+
+Boilver()
+{
+	printf '%s' "$_boil_version"
 }
 
 AddTrap()
