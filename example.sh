@@ -29,7 +29,7 @@ Main()
 	A "Blending $ingr1 and $ingr2 for $blendtime seconds"
 
 	A "This message will always be printed"
-	A "BTW, try -h, -v and -vv"
+	A "BTW, try -h, -v and -vv. Also, we're running version $(Boilver)"
 	W "This is a warning and will always be printed"
 	D "This is a debug message and will only be printed if -v was given"
 	V "This is a verbse debug message and will only be printed if -vv was given"
