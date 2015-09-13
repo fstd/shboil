@@ -54,6 +54,7 @@ _boil_Init()
 			else
 				eval "${_boil_optnam}='$_boil_i'"
 			fi
+			eval "${_boil_optnam}_set=1"
 		else
 			case "$_boil_i" in
 			v) _boil_verb=$((_boil_verb+1)) ;;
